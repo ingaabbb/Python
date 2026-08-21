@@ -12,7 +12,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Character:
-    def __init__(self, name, live, power):
+    def __init__(self, name, hp, power):
         self.name = name
         self.hp = hp
         self.power = power
@@ -80,8 +80,26 @@ class Monster:
         return f"მონსტრის სახელია {self.name}, ტიპი : {self.type}"
 
 monster1 = Monster.create_from_level("Mike Wazowski",2)
-print(monster1)
+monster2 = Monster.create_from_level("monster1", 4)
+monster3 = Monster.create_from_level("monster2", 1)
+monster4 = Monster.create_from_level("monster3", 3)
+monster5 = Monster.create_from_level("monster4", 4)
+monster6 = Monster.create_from_level("monster5", 2)
+monster7 = Monster.create_from_level("monster6", 3)
+monster8 = Monster.create_from_level("Shrek", 1)
+monster9 = Monster.create_from_level("monster7", 1)
+monster10 = Monster.create_from_level("monster8", 4)
 
+print(monster1)
+print(monster2)
+print(monster3)
+print(monster4)
+print(monster5)
+print(monster6)
+print(monster7)
+print(monster8)
+print(monster9)
+print(monster10)
 
 
 
@@ -136,25 +154,3 @@ my_game1 = SlotMachine.from_difficulty(5)
 my_game1.play()
 
 
-# #4 გმირის ქულების სისტემა
-# შექმენით Hero კლასი.
-# private health, private score.
-# staticmethod random_event() -> შემთხვევითი მოვლენა (ქულა ემატება ან ჯანმრთელობა
-# აკლდება).
-
-# classmethod from_name(cls, name) -> ქმნის გმირს სახელით.
-# მემკვიდრე SuperHero -> დამატებითი ძალა.
-# super() გამოიძახეთ მშობლის კონსტრუქტორისთვის.
-# თამაში გრძელდება სანამ გმირის health > 0.
-
-
-        
-
-# #5 პროგრამა კარტზე
-# Card კლასი (rank, suit).
-# Deck კლასი -> private cards list.
-# classmethod create_standard_deck() აბრუნებს სტანდარტულ 52 კარტიან დასტას.
-# staticmethod shuffle(cards) აურევს კარტებს.
-# მოთამაშე იღებს 5 კარტს და ამოწმებს, აქვს თუ არა “მარტივი კომბინაცია” (მაგ: ორი ერთნაირი)
-# აუცილებლად გატესტეთ კოდი, შეასრულეთ მხოლოდ პირობაში მოცემული ვარიანტი, არაა საჭირო
-# დამატება.
