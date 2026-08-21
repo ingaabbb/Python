@@ -5,19 +5,20 @@
 # შემოიტანე სიმბოლო: ი "ი" ხმოვანია
 # =====================
 
-# xmovnebi = "aeiou"
-# qartuli_xmovnebi = "აეიოუ"
+xmovnebi = "aeiou"
+qartuli_xmovnebi = "აეიოუ"
 
-# while True:
-#     simbolo = input("შემოიტანე სიმბოლო")
-#     if len(simbolo) == 1 and simbolo.isalpha():
-#         if simbolo in xmovnebi or simbolo in qartuli_xmovnebi:
-#                 print(f"{simbolo} ხმოვანია")
-#         else:
-#             print(f"{simbolo} თანხმოვანია")
-#         break
-#     else:
-#         print("შემოიტანეთ მხოლოდ სიმბოლო")
+
+while True:
+    simbolo = input("შემოიტანე სიმბოლო")
+    if len(simbolo) == 1 and simbolo.isalpha():
+        if simbolo.lower() in xmovnebi or simbolo.lower() in qartuli_xmovnebi:
+                print(f"{simbolo} ხმოვანია")
+        else:
+            print(f"{simbolo} თანხმოვანია")
+        break
+    else:
+        print("შემოიტანეთ მხოლოდ სიმბოლო")
 
 
 
@@ -39,16 +40,21 @@ List = [3, 14, 4, 1, 2, 11, 12, 18, 7, 18]
 # მონაცემი 1: 18
 # მონაცემი 2: 18
 # მონაცემი 3: 14
-count=1
+
+count = 1
 Max_index = []
+
 while count < 4:
-    Max = List[0]
+    Max = None
+    Max_indx = None
+    
     for i in range(len(List)):
-        if List[i] > Max and i not in Max_index :
-            Max = List[i]
-            Max_indx = i
+        if i not in Max_index:
+            if Max is None or List[i] > Max:
+                Max = List[i]
+                Max_indx = i
             
-    print(f"მონაცემი {count}: {Max}")
+    print(f"მონაცემი {count}: {Max} (ინდექსი: {Max_indx})")
     count += 1
     Max_index.append(Max_indx)
     
@@ -80,16 +86,15 @@ for i in range(height):
 # 5 // 2 = 2
 # 5 % 2 = 1
 
-def function(a,b):
-    jami = a + b
-    sxvaoba = a - b
-    namravli = a * b
-    gayofa = a / b
-    mtelisPovna = 5 // 2
-    nashti = a % b
-    return jami, sxvaoba, namravli, gayofa, mtelisPovna, nashti
+def function(a, b):
+    print(f"{a} + {b} = {a + b}")
+    print(f"{a} - {b} = {a - b}")
+    print(f"{a} * {b} = {a * b}")
+    print(f"{a} / {b} = {a / b}")
+    print(f"{a} // {b} = {a // b}")
+    print(f"{a} % {b} = {a % b}")
 
-print(function(5,2))
+function(5, 2)
 
 
 #6 გადააქციეთ დავალება #4 ფუნქციად,
