@@ -1,0 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.custom-navbar {
+    background-color: #87CEEB !important; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+}
+
+.custom-navbar .custom-nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 15px !important;
+    transition: all 0.3s ease; 
+}
+
+
+.custom-navbar .custom-nav-link:hover {
+    color: #f3e69c !important; 
+    transform: scale(1.05); 
+}
+body {
+    padding-top: 70px;
+}
